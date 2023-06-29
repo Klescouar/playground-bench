@@ -3,6 +3,7 @@ import React from 'react';
 import Dom from '../components/layout/dom';
 import dynamic from 'next/dynamic';
 import '@/styles/index.css';
+import '@/styles/canvas.scss';
 
 const Canvas = dynamic(() => import('../components/layout/canvas'), {
   ssr: false,
