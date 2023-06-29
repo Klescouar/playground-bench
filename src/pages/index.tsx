@@ -2,7 +2,7 @@ import dynamic from 'next/dynamic';
 import { useRouter } from 'next/router';
 import React from 'react';
 
-const Shader = dynamic(() => import('../components/canvas/ShaderExample/Blob'), {
+const Shader = dynamic(() => import('../components/canvas/Blob'), {
   ssr: false,
 });
 
