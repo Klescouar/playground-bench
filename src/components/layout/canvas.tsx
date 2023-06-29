@@ -9,7 +9,7 @@ const futura = localFont({ src: '../../styles/fonts/Gotham.otf' });
 
 const Controls = () => {
   const control = useRef(null);
-  return <OrbitControls ref={control} />;
+  return <OrbitControls ref={control} enableZoom={false} />;
 };
 const CanvasWrapper = ({ children }: { children: React.ReactNode }) => {
   return (
@@ -18,6 +18,7 @@ const CanvasWrapper = ({ children }: { children: React.ReactNode }) => {
         <h1 className='Canvas__Frame__Name'>
           KEVIN <br /> LE SCOUARNEC
         </h1>
+        <p className='Canvas__Frame__Role'>Fullstack Developer</p>
 
         <Canvas
           style={{
@@ -26,10 +27,9 @@ const CanvasWrapper = ({ children }: { children: React.ReactNode }) => {
             right: 0,
             bottom: 0,
             left: 0,
-            pointerEvents: 'none',
           }}
         >
-          <Stats />
+          {/* <Stats /> */}
           <Controls />
           <Preload all />
           {children}
