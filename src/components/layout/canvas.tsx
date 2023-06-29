@@ -15,10 +15,12 @@ const CanvasWrapper = ({ children }: { children: React.ReactNode }) => {
   return (
     <div className={`Canvas ${futura.className}`}>
       <div className='Canvas__Frame'>
-        <h1 className='Canvas__Frame__Name'>
-          KEVIN <br /> LE SCOUARNEC
-        </h1>
-        <p className='Canvas__Frame__Role'>Fullstack Developer</p>
+        <div className='Canvas__Frame__Header'>
+          <h1 className='Canvas__Frame__Header__Name'>
+            KEVIN <br /> LE SCOUARNEC
+          </h1>
+          <p className='Canvas__Frame__Header__Role'>Fullstack Developer</p>
+        </div>
 
         <Canvas
           style={{
