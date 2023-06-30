@@ -1,24 +1,22 @@
 import { useRef } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { A11yAnnouncer } from '@react-three/a11y';
-import { OrbitControls, Preload, Stats } from '@react-three/drei';
+import { OrbitControls, Preload } from '@react-three/drei';
 import React from 'react';
+import { Content } from './content';
+import { useIsMobile } from '@/hooks/useIsMobile';
 
 const Controls = () => {
   const control = useRef(null);
-  return <OrbitControls ref={control} enableZoom={false} />;
+  return <OrbitControls ref={control} enableZoom={false} enabled={false} />;
 };
 const CanvasWrapper = ({ children }: { children: React.ReactNode }) => {
+  const isMobile = useIsMobile();
+
   return (
     <div className='Canvas'>
       <div className='Canvas__Frame'>
-        <div className='Canvas__Frame__Header'>
-          <h1 className='Canvas__Frame__Header__Name'>
-            KEVIN <br /> LE SCOUARNEC
-          </h1>
-          <p className='Canvas__Frame__Header__Role'>Fullstack Developer</p>
-        </div>
-
+        <Content />
         <Canvas
           style={{
             position: 'absolute',
@@ -28,7 +26,6 @@ const CanvasWrapper = ({ children }: { children: React.ReactNode }) => {
             left: 0,
           }}
         >
-          {/* <Stats /> */}
           <Controls />
           <Preload all />
           {children}

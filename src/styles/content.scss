@@ -1,0 +1,69 @@
+@import './mixin.scss';
+
+.Content {
+  color: rgb(205, 205, 205);
+  height: fit-content;
+  display: flex;
+  justify-content: space-between;
+  height: 100%;
+
+  @include mobile {
+    flex-direction: column;
+  }
+
+  &__Header {
+    border-left: 1px solid #ffffff85;
+    padding-left: 1rem;
+
+    @include mobile {
+      height: fit-content;
+    }
+
+    &__Name {
+      font-size: 3rem;
+
+      @include mobile {
+        font-size: 2.6rem;
+      }
+    }
+
+    &__Role {
+      margin-top: 0.5rem;
+      font-size: 1.6rem;
+      color: rgb(233, 231, 231);
+      font-weight: bold;
+
+      &__Date {
+        font-style: italic;
+        font-size: 1.2rem;
+        font-weight: normal;
+        margin-left: 0.6rem;
+      }
+    }
+  }
+
+  &__Infos {
+    padding: 2rem 0;
+
+    &__Item {
+      margin: 1.2rem;
+    }
+
+    &__Contact {
+      display: flex;
+      margin-bottom: 1.5rem;
+
+      &__Link {
+        display: block;
+        height: 3rem;
+        width: 3rem;
+        margin: 1rem 0 0 1.2rem;
+
+        img {
+          height: 100%;
+          width: 100%;
+        }
+      }
+    }
+  }
+}

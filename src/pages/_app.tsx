@@ -2,11 +2,13 @@ import type { AppProps } from 'next/app';
 import React from 'react';
 import Dom from '../components/layout/dom';
 import dynamic from 'next/dynamic';
+import Loader from '../components/layout/loader';
+import localFont from 'next/font/local';
 import '@/styles/index.scss';
 import '@/styles/canvas.scss';
 import '@/styles/loader.scss';
-import Loader from '../components/layout/loader';
-import localFont from 'next/font/local';
+import '@/styles/content.scss';
+import '@/styles/experiences.scss';
 
 const futura = localFont({ src: '../styles/fonts/Gotham.otf' });
 

@@ -1,8 +1,8 @@
 const config = {
-  title: `Kevin Le Scouarnec | Portfolio`,
+  title: `Kevin Le Scouarnec | Curriculum Vitae`,
   url: `https://github.com/Klescouar/playground-bench`,
   description:
-    "Kevin Le Scouarnec | Developer Fullstack | Portfolio",
+    "Kevin Le Scouarnec | Developer Fullstack | Curriculum Vitae",
   author: "Kevin Le Scouarnec",
   keywords: [
     "Kevin Le Scouarnec",
@@ -10,6 +10,7 @@ const config = {
     "Le Scouarnec",
     "CV",
     "Portfolio",
+    "Curriculum Vitae",
     "Developer",
     "Fullstack",
     "Javascript",
