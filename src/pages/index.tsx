@@ -31,7 +31,7 @@ export default function Page() {
 export async function getStaticProps() {
   return {
     props: {
-      title: 'Kevin Le Scouarnec | Portfolio!',
+      title: 'Kevin Le Scouarnec | Curriculum Vitae',
     },
   };
 }

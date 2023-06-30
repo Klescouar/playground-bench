@@ -16,7 +16,7 @@ const Loader: React.FC = () => {
       <p className='Loader__Text'>
         <span className={`Loader__Text__Part animate-fade ${showText ? '' : 'disapear'}`}>Kevin Le Scouarnec</span>
         <span className={`Loader__Text__Part animate-fade ${showText ? '' : 'disapear'}`}>|</span>
-        <span className={`Loader__Text__Part animate-fade ${showText ? '' : 'disapear'}`}>Portfolio</span>
+        <span className={`Loader__Text__Part animate-fade ${showText ? '' : 'disapear'}`}>Curriculum Vitae</span>
       </p>
     </div>
   );

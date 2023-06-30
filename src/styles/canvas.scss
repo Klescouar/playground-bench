@@ -14,37 +14,18 @@
     border: 1px solid #ffffff85;
     background-color: rgb(16, 16, 16);
     padding: 3rem;
-    color: rgb(205, 205, 205);
     position: relative;
 
     @include mobile {
       height: calc(100vh - 2.5rem);
       width: calc(100vw - 2.5rem);
+      padding: 2rem;
       display: flex;
       justify-content: center;
-    }
+      flex-direction: column;
 
-    &__Header {
-      border-left: 1px solid #ffffff85;
-      padding-left: 1rem;
-
-      @include mobile {
-        height: fit-content;
-      }
-
-      &__Name {
-        font-size: 3rem;
-
-        @include mobile {
-          font-size: 2.6rem;
-        }
-      }
-
-      &__Role {
-        margin-top: 0.5rem;
-        font-size: 1.6rem;
-        color: rgb(233, 231, 231);
-        font-weight: bold;
+      canvas {
+        transform: scale(1.5);
       }
     }
   }
