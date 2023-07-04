@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import * as THREE from 'three';
 import { useMemo, useState, useRef } from 'react';
 import { createPortal, useFrame } from '@react-three/fiber';
 import { useFBO } from '@react-three/drei';
 import './shaders/simulationMaterial';
 import './shaders/dofPointsMaterial';
+import { ScrollContext } from '@/pages/_app';
 
 export function Particles({
   speed,
@@ -24,6 +25,7 @@ export function Particles({
 }) {
   const simRef = useRef<any>();
   const renderRef = useRef<any>();
+  const { scrollPosition } = useContext(ScrollContext);
   const [scene] = useState(() => new THREE.Scene());
   const [camera] = useState(() => new THREE.OrthographicCamera(-1, 1, 1, -1, 1 / Math.pow(2, 53), 1));
   const [positions] = useState(() => new Float32Array([-1, -1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, 1, 0, -1, 1, 0]));
