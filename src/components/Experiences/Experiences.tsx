@@ -1,4 +1,5 @@
-import React from 'react';
+import { ScrollContext } from '@/pages/_app';
+import React, { useContext, useEffect, useRef } from 'react';
 
 const EXPERIENCES = [
   {
@@ -67,8 +68,24 @@ const EXPERIENCES = [
 ];
 
 export const Experiences: React.FC = () => {
+  const { setScrollPosition } = useContext(ScrollContext);
+  const experiencesRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = experiencesRef.current?.scrollTop || 0;
+      setScrollPosition?.(scrollPosition);
+    };
+
+    experiencesRef.current?.addEventListener('scroll', handleScroll);
+
+    return () => {
+      experiencesRef.current?.removeEventListener('scroll', handleScroll);
+    };
+  }, [setScrollPosition]);
+
   return (
-    <div className='Experiences'>
+    <div className='Experiences' ref={experiencesRef}>
       <h2 className='Experiences__Title'>PROFESSIONAL EXPERIENCES</h2>
       {EXPERIENCES.map((exp) => (
         <div className='Experiences__Content' key={exp.period}>

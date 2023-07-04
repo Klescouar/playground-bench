@@ -1,5 +1,5 @@
 import type { AppProps } from 'next/app';
-import React from 'react';
+import React, { Dispatch, SetStateAction, createContext, useEffect, useState } from 'react';
 import Dom from '../components/layout/dom';
 import dynamic from 'next/dynamic';
 import Loader from '../components/layout/loader';
@@ -24,15 +24,31 @@ const AppLayout = ({ children }: { children: React.ReactNode }) => {
   return newChildren;
 };
 
+export const ScrollContext = createContext<{
+  scrollPosition: number;
+  setScrollPosition: Dispatch<SetStateAction<number>> | undefined;
+}>({
+  scrollPosition: 0,
+  setScrollPosition: undefined,
+});
+
 function App({ Component, pageProps = { title: 'index' } }: AppProps) {
-  // Get the children from each page so we can split them
   //@ts-ignore
   const children = Component(pageProps).props.children;
+  const [scrollPosition, setScrollPosition] = useState(0);
+  const [scaleFactor, setScaleFactor] = useState(2);
+
+  useEffect(() => {
+    setScaleFactor(scrollPosition > 10 ? 2 : 1.5);
+  }, [scrollPosition]);
 
   return (
-    <div className={futura.className}>
-      <Loader />
-      <AppLayout>{children}</AppLayout>
+    // @ts-ignore
+    <div className={futura.className} style={{ '--scale-factor': scaleFactor }}>
+      <ScrollContext.Provider value={{ scrollPosition, setScrollPosition }}>
+        <Loader />
+        <AppLayout>{children}</AppLayout>
+      </ScrollContext.Provider>
     </div>
   );
 }
