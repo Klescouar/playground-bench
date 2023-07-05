@@ -5,16 +5,101 @@
   width: 100vw;
   background-color: hsl(0, 0%, 5%);
   display: flex;
-  justify-content: center;
   align-items: center;
+
+  @include mobile {
+    flex-direction: column;
+  }
+
+  &__Nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 6rem;
+    position: relative;
+    overflow: hidden;
+
+    @include mobile {
+      width: auto;
+      height: 4rem;
+      flex-direction: row;
+    }
+
+    &__Chapters {
+      display: flex;
+      position: relative;
+      left: 0.7rem;
+      transition: all 0.3s ease;
+
+      @include mobile {
+        bottom: 0.2rem;
+        flex-direction: column;
+      }
+
+      &.--switched {
+        left: -4rem;
+
+        @include mobile {
+          bottom: 4.6rem;
+          left: 0;
+        }
+      }
+
+      &__Item {
+        color: white;
+        writing-mode: vertical-lr;
+        font-size: 4rem;
+        font-size: bold;
+        text-transform: uppercase;
+        width: fit-content;
+
+        @include mobile {
+          writing-mode: initial;
+          font-size: 2rem;
+          margin: 1rem 0;
+        }
+      }
+    }
+
+    &__Arrow {
+      background-color: transparent;
+      border: none;
+      color: rgb(205, 205, 205);
+      cursor: pointer;
+      margin: 3rem 0;
+
+      @include mobile {
+        margin: 0 3rem;
+        rotate: 270deg;
+      }
+
+      &.--hide {
+        opacity: 0;
+        pointer-events: none;
+      }
+
+      svg {
+        width: 2rem;
+        height: 3rem;
+        fill: rgb(205, 205, 205);
+        cursor: pointer;
+
+        @include mobile {
+          width: 1.5rem;
+          height: 2.5rem;
+        }
+      }
+    }
+  }
 
   &__Frame {
     height: calc(100vh - 5.5rem);
-    width: calc(100vw - 5.5rem);
+    width: calc(100vw - 8rem);
     border: 1px solid #ffffff85;
     background-color: rgb(20, 20, 20);
-    padding: 3rem;
     position: relative;
+    margin-left: 2.75rem;
+    overflow: hidden;
 
     canvas {
       transform: scale(var(--scale-factor));
@@ -28,6 +113,7 @@
       display: flex;
       justify-content: center;
       flex-direction: column;
+      margin: 1.25rem 0 0 0;
 
       canvas {
         transform: scale(1.5);

@@ -7,13 +7,15 @@ import { Experiences } from '../Experiences/Experiences';
 import { Canvas } from '@react-three/fiber';
 import { A11yAnnouncer } from '@react-three/a11y';
 import { OrbitControls, Preload } from '@react-three/drei';
+import { CHAPTERS } from './canvas';
+import { About } from '../About/About';
 
 const Controls = () => {
   const control = useRef(null);
   return <OrbitControls ref={control} enableZoom={false} enabled={false} />;
 };
 
-export const Content = ({ children }: { children: React.ReactNode }) => {
+export const Content = ({ children, chapter }: { children: React.ReactNode; chapter: `${CHAPTERS}` }) => {
   const isMobile = useIsMobile();
 
   return (
@@ -29,6 +31,7 @@ export const Content = ({ children }: { children: React.ReactNode }) => {
           <div className='Content__Presentation__Infos'>
             <div className='Content__Presentation__Infos__Contact'>
               <a
+                rel='noreferrer'
                 className='Content__Presentation__Infos__Contact__Link'
                 href='https://github.com/Klescouar'
                 target='_blank'
@@ -36,6 +39,7 @@ export const Content = ({ children }: { children: React.ReactNode }) => {
                 <Image priority src={GithubIcon} alt='Github link' />
               </a>
               <a
+                rel='noreferrer'
                 className='Content__Presentation__Infos__Contact__Link'
                 href='https://www.linkedin.com/in/kevin-le-scouarnec-70aa76b0/'
                 target='_blank'
@@ -52,8 +56,6 @@ export const Content = ({ children }: { children: React.ReactNode }) => {
             position: isMobile ? 'absolute' : 'relative',
             left: 0,
             bottom: 0,
-            // width: 'fit-content',
-            // height: 'fit-content',
             flex: 1,
             zIndex: 1000,
             pointerEvents: 'none',
@@ -65,7 +67,7 @@ export const Content = ({ children }: { children: React.ReactNode }) => {
         </Canvas>
         <A11yAnnouncer />
       </div>
-      <Experiences />
+      {chapter === CHAPTERS.EXPERIENCES ? <Experiences /> : <About />}
     </div>
   );
 };
