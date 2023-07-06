@@ -1,4 +1,4 @@
-@import './mixin.scss';
+@import "./mixin.scss";
 
 .Content {
   color: rgb(205, 205, 205);
@@ -74,11 +74,7 @@
           height: 3rem;
           width: 3rem;
           margin: 1rem 0 0 1.2rem;
-
-          img {
-            height: 100%;
-            width: 100%;
-          }
+          position: relative;
         }
       }
     }

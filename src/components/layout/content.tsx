@@ -1,7 +1,5 @@
 import React, { useRef } from 'react';
 import Image from 'next/image';
-import GithubIcon from '../../../public/github.png';
-import LinkedinIcon from '../../../public/linkedin.png';
 import { useIsMobile } from '@/hooks/useIsMobile';
 import { Experiences } from '../Experiences/Experiences';
 import { Canvas } from '@react-three/fiber';
@@ -15,40 +13,55 @@ const Controls = () => {
   return <OrbitControls ref={control} enableZoom={false} enabled={false} />;
 };
 
-export const Content = ({ children, chapter }: { children: React.ReactNode; chapter: `${CHAPTERS}` }) => {
+export const Content = ({
+  children,
+  chapter,
+}: {
+  children: React.ReactNode;
+  chapter: `${CHAPTERS}`;
+}) => {
   const isMobile = useIsMobile();
 
   return (
-    <div className='Content'>
-      <div className='Content__Presentation'>
-        <div className='Content__Presentation__Header'>
-          <h1 className='Content__Presentation__Header__Name'>KEVIN {isMobile && <br />} LE SCOUARNEC</h1>
-          <p className='Content__Presentation__Header__Role'>
-            Fullstack Developer<span className='Content__Presentation__Header__Role__Date'>-&nbsp; since 2017</span>
+    <div className="Content">
+      <div className="Content__Presentation">
+        <div className="Content__Presentation__Header">
+          <h1 className="Content__Presentation__Header__Name">
+            KEVIN {isMobile && <br />} LE SCOUARNEC
+          </h1>
+          <p className="Content__Presentation__Header__Role">
+            Fullstack Developer
+            <span className="Content__Presentation__Header__Role__Date">
+              -&nbsp; since 2017
+            </span>
           </p>
         </div>
         {!isMobile && (
-          <div className='Content__Presentation__Infos'>
-            <div className='Content__Presentation__Infos__Contact'>
+          <div className="Content__Presentation__Infos">
+            <div className="Content__Presentation__Infos__Contact">
               <a
-                rel='noreferrer'
-                className='Content__Presentation__Infos__Contact__Link'
-                href='https://github.com/Klescouar'
-                target='_blank'
+                rel="noreferrer"
+                className="Content__Presentation__Infos__Contact__Link"
+                href="https://github.com/Klescouar"
+                target="_blank"
               >
-                <Image priority src={GithubIcon} alt='Github link' />
+                <Image priority src="/github.png" alt="Github link" fill />
               </a>
               <a
-                rel='noreferrer'
-                className='Content__Presentation__Infos__Contact__Link'
-                href='https://www.linkedin.com/in/kevin-le-scouarnec-70aa76b0/'
-                target='_blank'
+                rel="noreferrer"
+                className="Content__Presentation__Infos__Contact__Link"
+                href="https://www.linkedin.com/in/kevin-le-scouarnec-70aa76b0/"
+                target="_blank"
               >
-                <Image priority src={LinkedinIcon} alt='Linkedin link' />
+                <Image priority src="/linkedin.png" alt="Linkedin link" fill />
               </a>
             </div>
-            <p className='Content__Presentation__Infos__Item'>+1 (438) 927 0412</p>
-            <p className='Content__Presentation__Infos__Item'>lescouarneckevin@protonmail.com</p>
+            <p className="Content__Presentation__Infos__Item">
+              +1 (438) 927 0412
+            </p>
+            <p className="Content__Presentation__Infos__Item">
+              lescouarneckevin@protonmail.com
+            </p>
           </div>
         )}
         <Canvas
