@@ -37,10 +37,11 @@
 
   &__Picture {
     position: absolute;
-    right: -10rem;
-    bottom: -7rem;
-    height: 150%;
-    width: auto;
+    right: -10%;
+    bottom: 0;
+    top: 0;
+    height: 100%;
+    width: 50%;
     z-index: 1;
 
     @include mobile {
