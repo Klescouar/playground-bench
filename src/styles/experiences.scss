@@ -8,11 +8,11 @@
   overflow-y: scroll;
   -ms-overflow-style: none;
   scrollbar-width: none;
-  padding-left: 4rem;
+  padding: 0 4rem 0 3rem;
 
   @include mobile {
     width: 100%;
-    padding-left: 0;
+    padding: 0;
   }
 
   &::-webkit-scrollbar {
@@ -24,7 +24,7 @@
     font-weight: bold;
     padding-bottom: 0.5rem;
     border-bottom: 1px solid #ffffff85;
-    margin: 0 0 1rem;
+    margin: 3rem 0 1rem;
   }
 
   &__Content {

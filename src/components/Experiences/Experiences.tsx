@@ -86,7 +86,7 @@ export const Experiences: React.FC = () => {
 
   return (
     <div className='Experiences' ref={experiencesRef}>
-      <h2 className='Experiences__Title'>PROFESSIONAL EXPERIENCES</h2>
+      {/* <h2 className='Experiences__Title'>PROFESSIONAL EXPERIENCES</h2> */}
       {EXPERIENCES.map((exp) => (
         <div className='Experiences__Content' key={exp.period}>
           <p className='Experiences__Content__Company'>

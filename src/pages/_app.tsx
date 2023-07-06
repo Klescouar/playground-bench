@@ -9,6 +9,7 @@ import '@/styles/canvas.scss';
 import '@/styles/loader.scss';
 import '@/styles/content.scss';
 import '@/styles/experiences.scss';
+import '@/styles/about.scss';
 
 const futura = localFont({ src: '../styles/fonts/Gotham.otf' });
 

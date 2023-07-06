@@ -1,0 +1,50 @@
+@import './mixin.scss';
+
+.About {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+
+  &__Description {
+    position: relative;
+    z-index: 10;
+    color: rgb(205, 205, 205);
+    width: 60%;
+    padding: 3rem;
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+
+    @include mobile {
+      width: 100%;
+      padding: 0;
+    }
+
+    &__Title {
+      font-size: 3rem;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+
+    &__Paragraph {
+      font-size: 1.6rem;
+      margin-bottom: 1.6rem;
+      line-height: 2rem;
+    }
+  }
+
+  &__Picture {
+    position: absolute;
+    right: -10rem;
+    bottom: -7rem;
+    height: 150%;
+    width: auto;
+    z-index: 1;
+
+    @include mobile {
+      display: none;
+    }
+  }
+}
