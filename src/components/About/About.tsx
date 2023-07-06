@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 
 export const About: React.FC = () => {
   return (
@@ -22,7 +23,9 @@ export const About: React.FC = () => {
           innovations technologiques, afin de développer de nouvelles compétences et expertises.
         </p>
       </div>
-      <img loading='lazy' className='About__Picture' src='../../../profilPicture.png' alt='Profil Picture' />
+      <div className='About__Picture'>
+        <Image priority src='/profilPicture.png' alt='Profil Picture' fill style={{ objectFit: 'cover' }} />
+      </div>
     </div>
   );
 };
