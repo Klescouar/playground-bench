@@ -1,9 +1,17 @@
 import type { AppProps } from 'next/app';
-import React, { Dispatch, SetStateAction, createContext, useEffect, useState } from 'react';
+import React, {
+  Dispatch,
+  SetStateAction,
+  createContext,
+  useEffect,
+  useState,
+} from 'react';
 import Dom from '../components/layout/dom';
 import dynamic from 'next/dynamic';
 import Loader from '../components/layout/loader';
 import localFont from 'next/font/local';
+import { DefaultSeo } from 'next-seo';
+
 import '@/styles/index.scss';
 import '@/styles/canvas.scss';
 import '@/styles/loader.scss';
@@ -44,13 +52,29 @@ function App({ Component, pageProps = { title: 'index' } }: AppProps) {
   }, [scrollPosition]);
 
   return (
-    // @ts-ignore
-    <div className={futura.className} style={{ '--scale-factor': scaleFactor }}>
-      <ScrollContext.Provider value={{ scrollPosition, setScrollPosition }}>
-        <Loader />
-        <AppLayout>{children}</AppLayout>
-      </ScrollContext.Provider>
-    </div>
+    <>
+      <DefaultSeo
+        title="Kevin Le Scouarnec | Curriculum Vitae"
+        description="Kevin Le Scouarnec | Developer Fullstack | Curriculum Vitae | Portfolio"
+        additionalMetaTags={[
+          {
+            name: 'keywords',
+            content:
+              'Kevin Le Scouarnec CV Portfolio Curriculum Vitae Developer Fullstack Javascript React ReactJS Node NodeJS job',
+          },
+        ]}
+      />
+      <div
+        className={futura.className}
+        // @ts-ignore
+        style={{ '--scale-factor': scaleFactor }}
+      >
+        <ScrollContext.Provider value={{ scrollPosition, setScrollPosition }}>
+          <Loader />
+          <AppLayout>{children}</AppLayout>
+        </ScrollContext.Provider>
+      </div>
+    </>
   );
 }
 
