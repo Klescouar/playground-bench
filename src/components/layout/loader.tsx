@@ -1,22 +1,24 @@
 import React, { useState, useEffect } from 'react';
+import classNames from 'classnames';
 
 const Loader: React.FC = () => {
-  const [hide, setHide] = useState(false);
-  const [showText, setShowText] = useState(true);
+  const [hideText, setHideText] = useState(false);
 
   useEffect(() => {
     const timeout = setTimeout(() => {
-      setShowText(false);
-    }, 2600);
+      setHideText(true);
+    }, 2000);
     return () => clearTimeout(timeout);
   }, []);
 
+  const textClassname = classNames('Loader__Text__Part', 'animate-fade', { disapear: hideText });
+
   return (
-    <div className={`Loader ${!showText ? 'hide' : ''}`}>
+    <div className={classNames('Loader', { hide: hideText })}>
       <p className='Loader__Text'>
-        <span className={`Loader__Text__Part animate-fade ${showText ? '' : 'disapear'}`}>Kevin Le Scouarnec</span>
-        <span className={`Loader__Text__Part animate-fade ${showText ? '' : 'disapear'}`}>|</span>
-        <span className={`Loader__Text__Part animate-fade ${showText ? '' : 'disapear'}`}>Curriculum Vitae</span>
+        <span className={textClassname}>Kevin Le Scouarnec</span>
+        <span className={textClassname}>|</span>
+        <span className={textClassname}>Curriculum Vitae</span>
       </p>
     </div>
   );

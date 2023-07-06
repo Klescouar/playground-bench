@@ -5,15 +5,9 @@ import LinkedinIcon from '../../../public/linkedin.png';
 import { useIsMobile } from '@/hooks/useIsMobile';
 import { Experiences } from '../Experiences/Experiences';
 import { Canvas } from '@react-three/fiber';
-import { A11yAnnouncer } from '@react-three/a11y';
-import { OrbitControls, Preload } from '@react-three/drei';
 import { CHAPTERS } from './canvas';
 import { About } from '../About/About';
 
-const Controls = () => {
-  const control = useRef(null);
-  return <OrbitControls ref={control} enableZoom={false} enabled={false} />;
-};
 
 export const Content = ({ children, chapter }: { children: React.ReactNode; chapter: `${CHAPTERS}` }) => {
   const isMobile = useIsMobile();
@@ -59,13 +53,10 @@ export const Content = ({ children, chapter }: { children: React.ReactNode; chap
             flex: 1,
             zIndex: 1000,
             pointerEvents: 'none',
-          }}
+          }}  
         >
-          <Controls />
-          <Preload all />
-          {children}
+          {children}  
         </Canvas>
-        <A11yAnnouncer />
       </div>
       {chapter === CHAPTERS.EXPERIENCES ? <Experiences /> : <About />}
     </div>
