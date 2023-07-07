@@ -1,0 +1,72 @@
+{
+  "post": "Développeur Fullstack",
+  "since": "depuis",
+  "who_am_i": "Qui suis-je ?",
+  "experiences": "Expériences",
+  "about/part1": "Développeur Full-Stack avec près de 7 années d'expérience, je possède une solide expertise de l'écosystème JavaScript, en particulier avec React.js, TypeScript et Node.js. J'ai eu l'opportunité de travailler sur des projets complexes de moyenne à grande envergure, et parfois en tant que référent technique.",
+  "about/part2": "Passionné par mon métier, j'ai la capacité de m'adapter facilement aux différents contextes techniques et fonctionnels. J'apprécie les défis et je suis en mesure de proposer des solutions aux problèmes qui bloquent la progression des projets de mes clients.",
+  "about/part3": "Travailler en équipe est une source d'épanouissement pour moi, tout comme accompagner les développeurs juniors dans leur montée en compétences. Je suis également curieux et constamment à l'affût des nouvelles innovations technologiques, afin de développer de nouvelles compétences et expertises.",
+  "skeepers": {
+    "job": "Développeur Fullstack",
+    "compagny": "Skeepers",
+    "period": "Depuis juillet 2022",
+    "project": "Développement d'une interface de shopping en direct pour offrir aux clients une expérience en direct et interactive leur permettant d'interagir en temps réel avec les vendeurs ou les influenceurs, poser des questions sur les produits, obtenir des recommandations personnalisées et effectuer des achats instantanés pendant la diffusion en direct.",
+    "activities": {
+      "1": "Développement de nouvelles fonctionnalités (front-end/backend)",
+      "2": "Étude et estimation de nouvelles fonctionnalités",
+      "3": "Introduction de meilleures pratiques (typage strict, linters, vérificateur de code, tests)",
+      "4": "Création/amélioration de diverses API REST"
+    },
+
+    "technicalEnvironment": "Vanilla JS, Typescript, ReactJS, StencilJS, Material-Ui, NodeJS, NestJS, AWS, socket.io, React-Testing-Library, Développement basé sur Trunk, Docker, PostgresSQL, microservices"
+  },
+  "decathlon": {
+    "job": "Développeur Fullstack",
+    "compagny": "Decathlon",
+    "period": "Juin 2020 - Juillet 2022",
+    "project": "Développement de l'application mobile et du site web Decathlon Activités, conçus pour mettre en relation les athlètes et les entraîneurs. Decathlon Activités propose également des événements sportifs, des ateliers et des programmes d'entraînement pour promouvoir l'exercice régulier et encourager le bien-être physique et mental.",
+    "activities": {
+      "1": "Développement de l'application mobile pour Android et iOS en utilisant React Native",
+      "2": "Développement de nouvelles fonctionnalités du site web (front-end/backend)",
+      "3": "Étude et estimation de nouvelles fonctionnalités",
+      "4": "Mise en place de bonnes pratiques (typage strict, linters, vérificateur de code, tests)",
+      "5": "Facilitation occasionnelle d'une cérémonie agile (planification des sprints, rétrospective, etc.)",
+      "6": "Mise en place d'un puissant système de recherche en utilisant Algolia",
+      "7": "Déploiement automatisé de l'application mobile sur les différentes boutiques en utilisant Bitrise",
+      "8": "Mise en place et optimisation du référencement (SEO)"
+    },
+    "technicalEnvironment": "Vanilla JS, Typescript, ReactJS, React-Native, NextJS, Redux, NodeJS, Algolia, React-Testing-Library, Typescript, Bitrise, PostgresSQL, Heroku, Docker, Stripe, storybook"
+  },
+  "sncf": {
+    "job": "Développeur Fullstack",
+    "compagny": "OUI.SNCF",
+    "period": "Juin 2017 - Mars 2020",
+    "project": "Développement du portail de connexion WIFI à bord d'INOUI. Permet aux passagers d'accéder au WIFI en utilisant leurs informations de réservation, de fournir des informations sur le trajet en cours (emplacement du train, heure d'arrivée, assistance bot, perturbation en cours, etc.), et de divertir (jeux, vidéos, chat entre passagers).",
+    "activities": {
+      "1": "Développement de nouvelles fonctionnalités (front-end/backend)",
+      "2": "Participation à l'étude et l'estimation de nouvelles fonctionnalités",
+      "3": "Participation à la mise en place de bonnes pratiques (typage strict, linters, vérificateur de code, tests)",
+      "4": "Facilitation occasionnelle de cérémonies agiles"
+    },
+    "technicalEnvironment": "Vanilla JS, ReactJS, Redux, Flow, Jest, LESS, NodeJS, socket.io, Webpack"
+  },
+  "lyria": {
+    "job": "Développeur Frontend",
+    "compagny": "LYRIA",
+    "period": "Juin 2016 - Juin 2017",
+    "project": "Développement du site web LYRIA, permettant aux passagers de gérer leurs réservations de billets de train (informations de voyage, échange, paiement) et leur compte passager.",
+    "activities": {
+      "1": "Développement de nouvelles fonctionnalités (front-end/backend)",
+      "2": "Participation à l'étude et l'estimation de nouvelles fonctionnalités",
+      "3": "Participation à la mise en place de bonnes pratiques (typage strict, linters, vérificateur de code, tests)",
+      "4": "Facilitation occasionnelle de cérémonies agiles",
+      "5": "Analyse et définition du nouveau design du site web"
+    },
+    "technicalEnvironment": "Vanilla JS, AngularJS, SASS, NodeJS, Karma, Gulp"
+  },
+  "about": {
+    "part1": "Développeur Full-Stack avec près de 7 années d'expérience, je possède une solide expertise de l'écosystème JavaScript, en particulier avec React.js, TypeScript et Node.js. J'ai eu l'opportunité de travailler sur des projets complexes de moyenne à grande envergure, et parfois en tant que référent technique.",
+    "part2": "Passionné par mon métier, j'ai la capacité de m'adapter facilement aux différents contextes techniques et fonctionnels. J'apprécie les défis et je suis en mesure de proposer des solutions aux problèmes qui bloquent la progression des projets de mes clients.",
+    "part3": "Travailler en équipe est une source d'épanouissement pour moi, tout comme accompagner les développeurs juniors dans leur montée en compétences. Je suis également curieux et constamment à l'affût des nouvelles innovations technologiques, afin de développer de nouvelles compétences et expertises."
+  }
+}

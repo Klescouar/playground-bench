@@ -11,6 +11,7 @@ import dynamic from 'next/dynamic';
 import Loader from '../components/layout/loader';
 import localFont from 'next/font/local';
 import { DefaultSeo } from 'next-seo';
+import { Talkr } from 'talkr';
 
 import '@/styles/index.scss';
 import '@/styles/canvas.scss';
@@ -18,6 +19,10 @@ import '@/styles/loader.scss';
 import '@/styles/content.scss';
 import '@/styles/experiences.scss';
 import '@/styles/about.scss';
+import '@/styles/languageSwitcher.scss';
+
+import en from '../translations/en.json';
+import fr from '../translations/fr.json';
 
 const futura = localFont({ src: '../styles/fonts/Gotham.otf' });
 
@@ -81,7 +86,9 @@ function App({ Component, pageProps = { title: 'index' } }: AppProps) {
         <LoadingContext.Provider value={{ isLoaded, setIsLoaded }}>
           <ScrollContext.Provider value={{ scrollPosition, setScrollPosition }}>
             <Loader />
-            <AppLayout>{children}</AppLayout>
+            <Talkr languages={{ en, fr }} defaultLanguage="en">
+              <AppLayout>{children}</AppLayout>
+            </Talkr>
           </ScrollContext.Provider>
         </LoadingContext.Provider>
       </div>

@@ -3,14 +3,19 @@ import { Content } from './content';
 import ArrowDownIcon from '../../../public/arrow-down-long.svg';
 import ArrowUpIcon from '../../../public/arrow-up-long.svg';
 import classNames from 'classnames';
+import { LanguageSwitcher } from '../LanguageSwitcher/LanguageSwitcher';
+import { useT } from 'talkr';
+import { useIsMobile } from '@/hooks/useIsMobile';
 
 export enum CHAPTERS {
-  EXPERIENCES = 'Experiences',
-  WHO_AM_I = 'Qui suis-je ?',
+  EXPERIENCES = 'experiences',
+  WHO_AM_I = 'who_am_i',
 }
 
 const CanvasWrapper = ({ children }: { children: React.ReactNode }) => {
   const [chapter, setChapter] = useState(CHAPTERS.WHO_AM_I);
+  const { T } = useT();
+  const isMobile = useIsMobile();
   const handleChapterChange = () => {
     setChapter(
       chapter === CHAPTERS.EXPERIENCES
@@ -20,7 +25,10 @@ const CanvasWrapper = ({ children }: { children: React.ReactNode }) => {
   };
   return (
     <div className="Canvas">
+      {!isMobile && <LanguageSwitcher />}
       <div className="Canvas__Frame">
+        {isMobile && <LanguageSwitcher />}
+
         <Content chapter={chapter}>{children}</Content>
       </div>
       <div className="Canvas__Nav">
@@ -37,8 +45,10 @@ const CanvasWrapper = ({ children }: { children: React.ReactNode }) => {
             '--switched': chapter === CHAPTERS.WHO_AM_I,
           })}
         >
-          <p className="Canvas__Nav__Chapters__Item">{CHAPTERS.EXPERIENCES}</p>
-          <p className="Canvas__Nav__Chapters__Item">{CHAPTERS.WHO_AM_I}</p>
+          <p className="Canvas__Nav__Chapters__Item">
+            {T(CHAPTERS.EXPERIENCES)}
+          </p>
+          <p className="Canvas__Nav__Chapters__Item">{T(CHAPTERS.WHO_AM_I)}</p>
         </div>
 
         <button

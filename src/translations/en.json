@@ -1,0 +1,71 @@
+{
+  "post": "Fullstack Developer",
+  "since": "since",
+  "who_am_i": "Who am I?",
+  "experiences": "Experiences",
+  "about/part1": "Full-Stack Developer with nearly 7 years of experience, I have a strong expertise in the JavaScript ecosystem, particularly with React.js, TypeScript, and Node.js. I have had the opportunity to work on medium to large-scale complex projects, sometimes as a technical lead.",
+  "about/part2": "Passionate about my profession, I have the ability to adapt easily to different technical and functional contexts. I enjoy challenges and I am able to provide solutions to problems that impede the progress of my clients' projects.",
+  "about/part3": "Working in a team is a source of fulfillment for me, as well as mentoring junior developers in their skills development. I am also curious and constantly keeping up with new technological innovations in order to develop new skills and expertise.",
+  "skeepers": {
+    "job": "Fullstack Developer",
+    "compagny": "Skeepers",
+    "period": "Since July 2022",
+    "project": "Development of a live shopping interface to offer customers a live and interactive experience allowing users to interact in real time with sellers or influencers, ask questions about products, get personalized recommendations, and make purchases instantly during the live broadcast.",
+    "activities": {
+      "1": "Development of new functionalities (front-end/backend)",
+      "2": "Study and estimation of new functionalities",
+      "3": "Introduction of best practices (strict typing, linters, code checker, tests)",
+      "4": "Creation/improvement of various REST APIs"
+    },
+    "technicalEnvironment": "Vanilla JS, Typescript, ReactJS, StencilJS, Material-Ui, NodeJS, NestJS, AWS, socket.io, React-Testing-Library, Trunk based development, Docker, PostgresSQL, microservices"
+  },
+  "decathlon": {
+    "job": "Fullstack Developer",
+    "compagny": "Decathlon",
+    "period": "June 2020 - July 2022",
+    "project": "Development of the Decathlon Activities mobile application and website, designed to put athletes and coaches in touch with each other. Decathlon Activities also offers sporting events, workshops, and training programs to promote regular exercise and encourage physical and mental well-being.",
+    "activities": {
+      "1": "Development of the mobile application for Android and iOS using React Native",
+      "2": "Development of new website functionalities (front-end/backend)",
+      "3": "Study and estimation of new functionalities",
+      "4": "Implementation of best practices (strict typing, linters, code checker, tests)",
+      "5": "Occasional facilitation of an agile ceremony (sprint planning, retrospective, etc.)",
+      "6": "Implementation of a powerful search system using Algolia",
+      "7": "Automated deployment of the mobile application to the various stores using Bitrise",
+      "8": "SEO implementation and optimization"
+    },
+    "technicalEnvironment": "Vanilla JS, Typescript, ReactJS, React-Native, NextJS, Redux, NodeJS, Algolia, React-Testing-Library, Typescript, Bitrise, PostgresSQL, Heroku, Docker, Stripe, storybook"
+  },
+  "sncf": {
+    "job": "Fullstack Developer",
+    "compagny": "OUI.SNCF",
+    "period": "June 2017 - March 2020",
+    "project": "Development of the INOUI on-board WIFI connection portal. Give passengers access to WIFI using their reservation information, provide information on the journey in progress (train location, arrival time, bot assistance, current disruption, etc.), entertain (games, videos, passenger chat).",
+    "activities": {
+      "1": "Development of new functionalities (front-end/backend)",
+      "2": "Participation in the study and estimation of new functionalities",
+      "3": "Participation in the implementation of best practices (strict typing, linters, code checker, tests)",
+      "4": "Occasional agile ceremony facilitation"
+    },
+    "technicalEnvironment": "Vanilla JS, ReactJS, Redux, Flow, Jest, LESS, NodeJS, socket.io, Webpack"
+  },
+  "lyria": {
+    "job": "Frontend Developer",
+    "compagny": "LYRIA",
+    "period": "June 2016 - June 2017",
+    "project": "Development of the LYRIA website, enabling passengers to manage their train ticket reservations (travel information, exchange, payment), and their passenger account.",
+    "activities": {
+      "1": "Development of new functionalities (front-end/backend)",
+      "2": "Participation in the study and estimation of new functionalities",
+      "3": "Participation in the implementation of best practices (strict typing, linters, code checker, tests)",
+      "4": "Occasional agile ceremony facilitation",
+      "5": "Analysis and definition of new website design"
+    },
+    "technicalEnvironment": "Vanilla JS, AngularJS, SASS, NodeJS, Karma, Gulp"
+  },
+  "about": {
+    "part1": "Full-Stack Developer with nearly 7 years of experience, I have a strong expertise in the JavaScript ecosystem, particularly with React.js, TypeScript, and Node.js. I have had the opportunity to work on medium to large-scale complex projects, sometimes as a technical lead.",
+    "part2": "Passionate about my profession, I have the ability to adapt easily to different technical and functional contexts. I enjoy challenges and I am able to provide solutions to problems that impede the progress of my clients' projects.",
+    "part3": "Working in a team is a source of fulfillment for me, as well as mentoring junior developers in their skills development. I am also curious and constantly keeping up with new technological innovations in order to develop new skills and expertise."
+  }
+}
