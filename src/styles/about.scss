@@ -16,6 +16,7 @@
     overflow-y: scroll;
     -ms-overflow-style: none;
     scrollbar-width: none;
+    max-width: 70rem;
 
     @include mobile {
       width: 100%;
@@ -45,7 +46,7 @@
   }
 
   &__Picture {
-    position: absolute;
+    position: relative;
     right: -100%;
     bottom: 0;
     top: 0;

@@ -1,4 +1,4 @@
-@import "./mixin.scss";
+@import './mixin.scss';
 
 .Content {
   color: rgb(205, 205, 205);
@@ -15,8 +15,10 @@
     display: flex;
     flex-direction: column;
     padding: 3rem;
+    width: 30%;
 
     @include mobile {
+      width: 100%;
       padding: 0;
     }
 
