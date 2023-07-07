@@ -1,11 +1,11 @@
-import React, { useRef } from 'react';
+import React, { useContext } from 'react';
 import Image from 'next/image';
 import { useIsMobile } from '@/hooks/useIsMobile';
 import { Experiences } from '../Experiences/Experiences';
 import { Canvas } from '@react-three/fiber';
 import { CHAPTERS } from './canvas';
 import { About } from '../About/About';
-
+import { LoadingContext } from '@/pages/_app';
 
 export const Content = ({
   children,
@@ -15,6 +15,7 @@ export const Content = ({
   chapter: `${CHAPTERS}`;
 }) => {
   const isMobile = useIsMobile();
+  const { isLoaded } = useContext(LoadingContext);
 
   return (
     <div className="Content">
@@ -64,14 +65,18 @@ export const Content = ({
             left: 0,
             bottom: 0,
             flex: 1,
-            zIndex: 1000,
-            pointerEvents: 'none',
-          }}  
+          }}
         >
-          {children}  
+          {children}
         </Canvas>
       </div>
-      {chapter === CHAPTERS.EXPERIENCES ? <Experiences /> : <About />}
+      {isLoaded ? (
+        chapter === CHAPTERS.EXPERIENCES ? (
+          <Experiences />
+        ) : (
+          <About />
+        )
+      ) : null}
     </div>
   );
 };

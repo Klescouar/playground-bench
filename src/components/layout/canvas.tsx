@@ -10,29 +10,41 @@ export enum CHAPTERS {
 }
 
 const CanvasWrapper = ({ children }: { children: React.ReactNode }) => {
-  const [chapter, setChapter] = useState(CHAPTERS.EXPERIENCES);
+  const [chapter, setChapter] = useState(CHAPTERS.WHO_AM_I);
   const handleChapterChange = () => {
-    setChapter(chapter === CHAPTERS.EXPERIENCES ? CHAPTERS.WHO_AM_I : CHAPTERS.EXPERIENCES);
+    setChapter(
+      chapter === CHAPTERS.EXPERIENCES
+        ? CHAPTERS.WHO_AM_I
+        : CHAPTERS.EXPERIENCES
+    );
   };
   return (
-    <div className='Canvas'>
-      <div className='Canvas__Frame'>
+    <div className="Canvas">
+      <div className="Canvas__Frame">
         <Content chapter={chapter}>{children}</Content>
       </div>
-      <div className='Canvas__Nav'>
+      <div className="Canvas__Nav">
         <button
-          className={classNames('Canvas__Nav__Arrow', { '--hide': chapter === CHAPTERS.EXPERIENCES })}
+          className={classNames('Canvas__Nav__Arrow', {
+            '--hide': chapter === CHAPTERS.WHO_AM_I,
+          })}
           onClick={handleChapterChange}
         >
           <ArrowUpIcon />
         </button>
-        <div className={classNames('Canvas__Nav__Chapters', { '--switched': chapter === CHAPTERS.WHO_AM_I })}>
-          <p className='Canvas__Nav__Chapters__Item'>{CHAPTERS.EXPERIENCES}</p>
-          <p className='Canvas__Nav__Chapters__Item'>{CHAPTERS.WHO_AM_I}</p>
+        <div
+          className={classNames('Canvas__Nav__Chapters', {
+            '--switched': chapter === CHAPTERS.WHO_AM_I,
+          })}
+        >
+          <p className="Canvas__Nav__Chapters__Item">{CHAPTERS.EXPERIENCES}</p>
+          <p className="Canvas__Nav__Chapters__Item">{CHAPTERS.WHO_AM_I}</p>
         </div>
 
         <button
-          className={classNames('Canvas__Nav__Arrow', { '--hide': chapter === CHAPTERS.WHO_AM_I })}
+          className={classNames('Canvas__Nav__Arrow', {
+            '--hide': chapter === CHAPTERS.EXPERIENCES,
+          })}
           onClick={handleChapterChange}
         >
           <ArrowDownIcon />

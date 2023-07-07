@@ -35,7 +35,12 @@ export default function Blob() {
       };
   return (
     <>
-      <OrbitControls makeDefault autoRotate autoRotateSpeed={0.5} enabled={false} />
+      <OrbitControls
+        makeDefault
+        autoRotate
+        autoRotateSpeed={0.5}
+        enabled={false}
+      />
       <CameraShake
         yawFrequency={1}
         maxYaw={0.05}

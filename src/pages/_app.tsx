@@ -41,11 +41,20 @@ export const ScrollContext = createContext<{
   setScrollPosition: undefined,
 });
 
+export const LoadingContext = createContext<{
+  isLoaded: boolean;
+  setIsLoaded: Dispatch<SetStateAction<boolean>> | undefined;
+}>({
+  isLoaded: false,
+  setIsLoaded: undefined,
+});
+
 function App({ Component, pageProps = { title: 'index' } }: AppProps) {
   //@ts-ignore
   const children = Component(pageProps).props.children;
   const [scrollPosition, setScrollPosition] = useState(0);
   const [scaleFactor, setScaleFactor] = useState(2);
+  const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
     setScaleFactor(scrollPosition > 10 ? 2 : 1.5);
@@ -69,10 +78,12 @@ function App({ Component, pageProps = { title: 'index' } }: AppProps) {
         // @ts-ignore
         style={{ '--scale-factor': scaleFactor }}
       >
-        <ScrollContext.Provider value={{ scrollPosition, setScrollPosition }}>
-          <Loader />
-          <AppLayout>{children}</AppLayout>
-        </ScrollContext.Provider>
+        <LoadingContext.Provider value={{ isLoaded, setIsLoaded }}>
+          <ScrollContext.Provider value={{ scrollPosition, setScrollPosition }}>
+            <Loader />
+            <AppLayout>{children}</AppLayout>
+          </ScrollContext.Provider>
+        </LoadingContext.Provider>
       </div>
     </>
   );
