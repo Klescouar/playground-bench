@@ -1,0 +1,29 @@
+@import './mixin.scss';
+
+.LanguageSwitcher {
+  position: absolute;
+  top: 0.3rem;
+  right: 0.8rem;
+  z-index: 10;
+
+  &__CTA {
+    background: none;
+    border: none;
+    opacity: 0.5;
+
+    &.--active {
+      opacity: 1;
+    }
+  }
+
+  svg {
+    width: 2.2rem;
+    height: 2.75rem;
+    fill: rgb(205, 205, 205);
+    cursor: pointer;
+
+    @include mobile {
+      width: 2rem;
+    }
+  }
+}

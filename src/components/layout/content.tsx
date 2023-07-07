@@ -6,6 +6,7 @@ import { Canvas } from '@react-three/fiber';
 import { CHAPTERS } from './canvas';
 import { About } from '../About/About';
 import { LoadingContext } from '@/pages/_app';
+import { useT } from 'talkr';
 
 export const Content = ({
   children,
@@ -16,6 +17,7 @@ export const Content = ({
 }) => {
   const isMobile = useIsMobile();
   const { isLoaded } = useContext(LoadingContext);
+  const { T } = useT();
 
   return (
     <div className="Content">
@@ -25,9 +27,9 @@ export const Content = ({
             KEVIN {isMobile && <br />} LE SCOUARNEC
           </h1>
           <p className="Content__Presentation__Header__Role">
-            Fullstack Developer
+            {T('post')}
             <span className="Content__Presentation__Header__Role__Date">
-              -&nbsp; since 2017
+              -&nbsp; {T('since')} 2017
             </span>
           </p>
         </div>
