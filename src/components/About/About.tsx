@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { useT } from 'talkr';
+import classNames from 'classnames';
 
 export const About: React.FC = () => {
   const [paragraphs, setParagraphs] = useState<
@@ -36,27 +37,34 @@ export const About: React.FC = () => {
   }, [paragraphs]);
 
   return (
-    <div className={`About ${isAnimated ? 'show' : ''}`}>
-      <div className={`About__Description ${isAnimated ? 'show' : ''}`}>
-        <h2 className="About__Description__Title">Hey,</h2>
+    <div className={classNames('About', { show: isAnimated })}>
+      <div className={classNames('About__Description', { show: isAnimated })}>
+        <h2
+          className={classNames('About__Description__Title', {
+            show: isAnimated,
+          })}
+        >
+          Hey,
+        </h2>
         {paragraphs.map((paragraph, index) => (
           <p
             key={index}
-            className={`About__Description__Paragraph ${
-              paragraph.isVisible ? 'show' : ''
-            }`}
+            className={classNames('About__Description__Paragraph', {
+              show: paragraph.isVisible,
+            })}
           >
             {T(paragraph.content)}
           </p>
         ))}
       </div>
-      <div className={`About__Picture ${isAnimated ? 'show' : ''}`}>
+      <div className={classNames('About__Picture', { show: isAnimated })}>
         <Image
+          className="About__Picture__Image"
           priority
-          src="/profilPicture.png"
+          src="/about.png"
           alt="Picture of Le Scouarnec Kevin"
           fill
-          style={{ objectFit: 'cover' }}
+          style={{ objectFit: 'contain' }}
         />
       </div>
     </div>

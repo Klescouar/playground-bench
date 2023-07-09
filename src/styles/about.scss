@@ -11,12 +11,11 @@
     position: relative;
     z-index: 10;
     color: rgb(205, 205, 205);
-    width: 60%;
     padding: 3rem;
     overflow-y: scroll;
     -ms-overflow-style: none;
     scrollbar-width: none;
-    max-width: 70rem;
+    flex: 1;
 
     @include mobile {
       width: 100%;
@@ -28,6 +27,14 @@
       margin-bottom: 2rem;
       text-align: center;
       margin-top: 0;
+      opacity: 0;
+      transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
+      transition-delay: 0.2s;
+
+      &.show {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     &__Paragraph {
@@ -36,7 +43,7 @@
       line-height: 2rem;
       opacity: 0;
       transform: translateY(10px);
-      transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+      transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
 
       &.show {
         opacity: 1;
@@ -47,17 +54,22 @@
 
   &__Picture {
     position: relative;
-    right: -100%;
-    bottom: 0;
-    top: 0;
     height: 100%;
-    width: 50%;
-    z-index: 1;
+    max-width: 40%;
+    animation: fadeIn 0.4s ease-in-out forwards;
     opacity: 0;
-    animation: fadeIn 0.3s ease-in-out forwards;
 
     @include mobile {
       display: none;
+    }
+
+    &__Image {
+      position: relative !important;
+      width: auto !important;
+      z-index: 1;
+      align-self: flex-end;
+      display: flex;
+      justify-content: flex-end;
     }
   }
 }
@@ -65,14 +77,10 @@
 @keyframes fadeIn {
   0% {
     opacity: 0;
-    right: -40%;
-  }
-  50% {
-    opacity: 0.3;
-    right: -20%;
+    right: -30%;
   }
   100% {
     opacity: 1;
-    right: -10%;
+    right: 0;
   }
 }
