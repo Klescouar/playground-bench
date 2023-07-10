@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useContext, useRef, useState } from 'react';
 import { Content } from './content';
 import ArrowDownIcon from '../../../public/arrow-down-long.svg';
 import ArrowUpIcon from '../../../public/arrow-up-long.svg';
@@ -6,6 +6,7 @@ import classNames from 'classnames';
 import { LanguageSwitcher } from '../LanguageSwitcher/LanguageSwitcher';
 import { useT } from 'talkr';
 import { useIsMobile } from '@/hooks/useIsMobile';
+import { ScrollContext } from '@/pages/_app';
 
 export enum CHAPTERS {
   EXPERIENCES = 'experiences',
@@ -14,8 +15,10 @@ export enum CHAPTERS {
 
 const CanvasWrapper = ({ children }: { children: React.ReactNode }) => {
   const [chapter, setChapter] = useState(CHAPTERS.WHO_AM_I);
+  const wheelStartedRef = useRef(false);
   const { T } = useT();
   const isMobile = useIsMobile();
+  const { scrollPosition } = useContext(ScrollContext);
   const handleChapterChange = () => {
     setChapter(
       chapter === CHAPTERS.EXPERIENCES
@@ -23,8 +26,29 @@ const CanvasWrapper = ({ children }: { children: React.ReactNode }) => {
         : CHAPTERS.EXPERIENCES
     );
   };
+
+  const handleWheel = (event: any) => {
+    if (event.deltaY === 1 || event.deltaY === -1) {
+      wheelStartedRef.current = false;
+      return;
+    }
+    if (!wheelStartedRef.current) {
+      wheelStartedRef.current = true;
+      if (event.deltaY > 0 && chapter === CHAPTERS.WHO_AM_I) {
+        setChapter(CHAPTERS.EXPERIENCES);
+      }
+      if (
+        event.deltaY < 0 &&
+        chapter === CHAPTERS.EXPERIENCES &&
+        scrollPosition === 0
+      ) {
+        setChapter(CHAPTERS.WHO_AM_I);
+      }
+    }
+  };
+
   return (
-    <div className="Canvas">
+    <div className="Canvas" onWheel={handleWheel}>
       {!isMobile && <LanguageSwitcher />}
       <div className="Canvas__Frame">
         {isMobile && <LanguageSwitcher />}

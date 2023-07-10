@@ -11,7 +11,7 @@ enum LANGUAGES {
 
 export const LanguageSwitcher: React.FC = () => {
   const { setLocale, locale } = useT();
-  console.log(locale);
+
   return (
     <div className="LanguageSwitcher">
       <button
