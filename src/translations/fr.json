@@ -18,7 +18,7 @@
       "4": "Création/amélioration de diverses API REST"
     },
 
-    "technicalEnvironment": "Vanilla JS, Typescript, ReactJS, StencilJS, Material-Ui, NodeJS, NestJS, AWS, socket.io, React-Testing-Library, Développement basé sur Trunk, Docker, PostgresSQL, microservices"
+    "technicalEnvironment": "Vanilla JS, Typescript, ReactJS, StencilJS, Material-Ui, NodeJS, NestJS, AWS, socket.io, React-Testing-Library, Trunk based development, Docker, PostgresSQL, microservices"
   },
   "decathlon": {
     "job": "Développeur Fullstack",
