@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { useT } from 'talkr';
 import classNames from 'classnames';
+import Contacts from '../Contacts/Contacts';
+import { useIsMobile } from '@/hooks/useIsMobile';
 
 export const About: React.FC = () => {
   const [paragraphs, setParagraphs] = useState<
@@ -9,6 +11,8 @@ export const About: React.FC = () => {
   >([]);
   const [isAnimated, setIsAnimated] = useState(false);
   const { T } = useT();
+  const isMobile = useIsMobile();
+
   useEffect(() => {
     const paragraphsData = ['about.part1', 'about.part2', 'about.part3'];
 
@@ -56,6 +60,7 @@ export const About: React.FC = () => {
             {T(paragraph.content)}
           </p>
         ))}
+        {isMobile && <Contacts />}
       </div>
       <div className={classNames('About__Picture', { show: isAnimated })}>
         <Image

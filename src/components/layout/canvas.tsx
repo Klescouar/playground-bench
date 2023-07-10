@@ -48,7 +48,7 @@ const CanvasWrapper = ({ children }: { children: React.ReactNode }) => {
   };
 
   return (
-    <div className="Canvas" onWheel={handleWheel}>
+    <div className="Canvas" onWheel={isMobile ? undefined : handleWheel}>
       {!isMobile && <LanguageSwitcher />}
       <div className="Canvas__Frame">
         {isMobile && <LanguageSwitcher />}

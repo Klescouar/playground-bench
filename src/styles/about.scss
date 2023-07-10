@@ -15,11 +15,12 @@
     overflow-y: scroll;
     -ms-overflow-style: none;
     scrollbar-width: none;
-    flex: 1;
+    flex: 0.7;
 
     @include mobile {
       width: 100%;
-      padding: 0;
+      padding: 0 0 10rem 0;
+      flex: 1;
     }
 
     &__Title {
@@ -53,11 +54,12 @@
   }
 
   &__Picture {
-    position: relative;
+    position: absolute;
     height: 100%;
-    max-width: 40%;
     animation: fadeIn 0.4s ease-in-out forwards;
     opacity: 0;
+    display: flex;
+    align-items: end;
 
     @include mobile {
       display: none;
@@ -69,6 +71,7 @@
       z-index: 1;
       align-self: flex-end;
       display: flex;
+      height: 80% !important;
       justify-content: flex-end;
     }
   }
@@ -77,10 +80,10 @@
 @keyframes fadeIn {
   0% {
     opacity: 0;
-    right: -30%;
+    right: -40%;
   }
   100% {
     opacity: 1;
-    right: 0;
+    right: -15%;
   }
 }
