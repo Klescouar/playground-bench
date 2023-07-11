@@ -29,13 +29,7 @@
       text-align: center;
       margin-top: 0;
       opacity: 0;
-      transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
-      transition-delay: 0.2s;
-
-      &.show {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      animation: fadeIn 0.4s ease-in-out forwards;
     }
 
     &__Paragraph {
@@ -43,13 +37,7 @@
       margin-bottom: 1.6rem;
       line-height: 2rem;
       opacity: 0;
-      transform: translateY(10px);
-      transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
-
-      &.show {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      animation: fadeIn 0.4s ease-in-out forwards;
     }
   }
 
@@ -85,5 +73,16 @@
   100% {
     opacity: 1;
     right: -15%;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(0.5rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
