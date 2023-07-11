@@ -5,64 +5,44 @@ import classNames from 'classnames';
 import Contacts from '../Contacts/Contacts';
 import { useIsMobile } from '@/hooks/useIsMobile';
 
+const paragraphsData = ['about.part1', 'about.part2', 'about.part3'];
+
 export const About: React.FC = () => {
-  const [paragraphs, setParagraphs] = useState<
-    { content: string; isVisible: boolean }[]
-  >([]);
+  const [paragraphs, setParagraphs] = useState<string[]>([]);
   const [isAnimated, setIsAnimated] = useState(false);
   const { T } = useT();
   const isMobile = useIsMobile();
 
   useEffect(() => {
-    const paragraphsData = ['about.part1', 'about.part2', 'about.part3'];
+    if (paragraphs.length === paragraphsData.length) return;
 
-    const animatedParagraphs = paragraphsData.map((paragraph, index) => ({
-      content: paragraph,
-      isVisible: false,
-    }));
-
-    setParagraphs(animatedParagraphs);
-    setIsAnimated(true);
-  }, []);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setParagraphs((prevParagraphs) => {
-        const updatedParagraphs = [...prevParagraphs];
-        const nextIndex = updatedParagraphs.findIndex((p) => !p.isVisible);
-        if (nextIndex !== -1) {
-          updatedParagraphs[nextIndex].isVisible = true;
+    const interval = setInterval(() => {
+      setParagraphs((prev) => {
+        if (prev.length === paragraphsData.length) {
+          clearInterval(interval);
         }
-        return updatedParagraphs;
+
+        return [...prev, paragraphsData[prev.length]];
       });
     }, 100);
 
-    return () => clearTimeout(timer);
+    return () => {
+      clearInterval(interval);
+    };
   }, [paragraphs]);
 
   return (
-    <div className={classNames('About', { show: isAnimated })}>
-      <div className={classNames('About__Description', { show: isAnimated })}>
-        <h2
-          className={classNames('About__Description__Title', {
-            show: isAnimated,
-          })}
-        >
-          Hey,
-        </h2>
+    <div className="About">
+      <div className="About__Description">
+        <h2 className="About__Description__Title">Hey,</h2>
         {paragraphs.map((paragraph, index) => (
-          <p
-            key={index}
-            className={classNames('About__Description__Paragraph', {
-              show: paragraph.isVisible,
-            })}
-          >
-            {T(paragraph.content)}
+          <p key={index} className="About__Description__Paragraph">
+            {T(paragraph)}
           </p>
         ))}
         {isMobile && <Contacts />}
       </div>
-      <div className={classNames('About__Picture', { show: isAnimated })}>
+      <div className="About__Picture">
         <Image
           className="About__Picture__Image"
           priority
