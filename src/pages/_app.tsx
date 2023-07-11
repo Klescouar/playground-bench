@@ -66,6 +66,12 @@ function App({ Component, pageProps = { title: 'index' } }: AppProps) {
     setScaleFactor(scrollPosition > 10 ? 2 : 1.5);
   }, [scrollPosition]);
 
+  useEffect(() => {
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/service-worker.js');
+    }
+  }, []);
+
   return (
     <>
       <DefaultSeo
@@ -87,7 +93,7 @@ function App({ Component, pageProps = { title: 'index' } }: AppProps) {
         <LoadingContext.Provider value={{ isLoaded, setIsLoaded }}>
           <ScrollContext.Provider value={{ scrollPosition, setScrollPosition }}>
             <Loader />
-            <Talkr languages={{ en, fr }} defaultLanguage="en">
+            <Talkr languages={{ en, fr }} defaultLanguage="fr">
               <AppLayout>{children}</AppLayout>
             </Talkr>
           </ScrollContext.Provider>
