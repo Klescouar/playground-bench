@@ -87,7 +87,7 @@ function App({ Component, pageProps = { title: 'index' } }: AppProps) {
         <LoadingContext.Provider value={{ isLoaded, setIsLoaded }}>
           <ScrollContext.Provider value={{ scrollPosition, setScrollPosition }}>
             <Loader />
-            <Talkr languages={{ en, fr }} defaultLanguage="en">
+            <Talkr languages={{ en, fr }} defaultLanguage="fr">
               <AppLayout>{children}</AppLayout>
             </Talkr>
           </ScrollContext.Provider>

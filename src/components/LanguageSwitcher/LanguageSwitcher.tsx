@@ -18,6 +18,7 @@ export const LanguageSwitcher: React.FC = () => {
         className={classNames('LanguageSwitcher__CTA', {
           '--active': locale === LANGUAGES.FR,
         })}
+        aria-label="Switch to french"
         onClick={() => setLocale(LANGUAGES.FR)}
       >
         <FrIcon />
@@ -26,6 +27,7 @@ export const LanguageSwitcher: React.FC = () => {
         className={classNames('LanguageSwitcher__CTA', {
           '--active': locale === LANGUAGES.EN,
         })}
+        aria-label="Switch to english"
         onClick={() => setLocale(LANGUAGES.EN)}
       >
         <EnIcon />

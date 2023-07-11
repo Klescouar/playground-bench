@@ -4,6 +4,11 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 });
 const withOffline = require('next-offline');
 const nextConfig = {
+  i18n: {
+    locales: ['en', 'fr'],
+    defaultLocale: 'fr',
+  },
+  productionBrowserSourceMaps: true,
   webpack(config, { isServer }) {
     config.module.rules.push({
       test: /\.(glsl|vs|fs|vert|frag|ps)$/,
@@ -11,7 +16,9 @@ const nextConfig = {
       use: ['raw-loader'],
     });
     // Grab the existing rule that handles SVG imports
-    const fileLoaderRule = config.module.rules.find((rule) => rule.test?.test?.('.svg'));
+    const fileLoaderRule = config.module.rules.find((rule) =>
+      rule.test?.test?.('.svg')
+    );
 
     config.module.rules.push(
       // Reapply the existing rule, but only for svg imports ending in ?url

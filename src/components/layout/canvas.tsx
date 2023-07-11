@@ -60,6 +60,7 @@ const CanvasWrapper = ({ children }: { children: React.ReactNode }) => {
           className={classNames('Canvas__Nav__Arrow', {
             '--hide': chapter === CHAPTERS.WHO_AM_I,
           })}
+          aria-label='Scroll to "Who am I"'
           onClick={handleChapterChange}
         >
           <ArrowUpIcon />
@@ -79,6 +80,7 @@ const CanvasWrapper = ({ children }: { children: React.ReactNode }) => {
           className={classNames('Canvas__Nav__Arrow', {
             '--hide': chapter === CHAPTERS.EXPERIENCES,
           })}
+          aria-label='Scroll to "Experiences"'
           onClick={handleChapterChange}
         >
           <ArrowDownIcon />
