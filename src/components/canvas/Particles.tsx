@@ -1,10 +1,10 @@
-import React, { useContext } from 'react';
-import * as THREE from 'three';
-import { useMemo, useState, useRef } from 'react';
-import { createPortal, useFrame } from '@react-three/fiber';
-import { useFBO } from '@react-three/drei';
-import './shaders/simulationMaterial';
-import './shaders/dofPointsMaterial';
+import React from "react";
+import * as THREE from "three";
+import { useMemo, useState, useRef } from "react";
+import { createPortal, useFrame } from "@react-three/fiber";
+import { useFBO } from "@react-three/drei";
+import "./shaders/simulationMaterial";
+import "./shaders/dofPointsMaterial";
 
 export function Particles({
   speed,

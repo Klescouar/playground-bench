@@ -1,8 +1,8 @@
-import { OrbitControls, CameraShake } from '@react-three/drei';
-// import { useControls } from 'leva';
-import { Particles } from './Particles';
-import React from 'react';
-import { useIsMobile } from '@/hooks/useIsMobile';
+import { OrbitControls, CameraShake } from "@react-three/drei";
+// import { useControls } from "leva";
+import { Particles } from "./Particles";
+import React from "react";
+import { useIsMobile } from "@/hooks/useIsMobile";
 
 export default function Blob() {
   // const props = useControls({
@@ -18,12 +18,12 @@ export default function Blob() {
 
   const props = isMobile
     ? {
-        focus: 2,
-        speed: 0.2,
-        aperture: 4.9,
-        fov: 32,
-        curl: 0.25,
-        size: 512,
+        focus: 3,
+        speed: 0.1,
+        aperture: 4,
+        fov: 164,
+        curl: 0.01,
+        size: 175,
       }
     : {
         focus: 3.7,

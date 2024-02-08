@@ -1,7 +1,7 @@
-@import './mixin.scss';
+@import "./mixin.scss";
 
 .Canvas {
-  height: 100vh;
+  height: 100dvh;
   width: 100vw;
   background-color: hsl(0, 0%, 5%);
   display: flex;
@@ -94,7 +94,7 @@
   }
 
   &__Frame {
-    height: calc(100vh - 5.5rem);
+    height: calc(100dvh - 5.5rem);
     width: calc(100vw - 8rem);
     border: 1px solid #ffffff85;
     background-color: rgb(20, 20, 20);
@@ -108,7 +108,7 @@
     }
 
     @include mobile {
-      height: calc(100vh - 2.5rem);
+      height: calc(100dvh - 2.5rem);
       width: calc(100vw - 2.5rem);
       padding: 2rem;
       display: flex;
