@@ -1,8 +1,7 @@
-@import './mixin.scss';
+@import "./mixin.scss";
 
 .Content {
   color: rgb(205, 205, 205);
-  height: fit-content;
   display: flex;
   justify-content: space-between;
   height: 100%;
@@ -14,7 +13,7 @@
   &__Presentation {
     display: flex;
     flex-direction: column;
-    padding: 3rem;
+    padding: 3rem 0 3rem 3rem;
     width: 30%;
 
     @include mobile {
@@ -56,4 +55,12 @@
       }
     }
   }
+}
+
+.Ellipsis {
+  white-space: nowrap; /* Empêche le texte de passer à la ligne */
+  overflow: hidden; /* Cache le texte qui dépasse */
+  text-overflow: ellipsis; /* Ajoute les points de suspension */
+  max-width: 100%; /* Ajustez cette valeur à votre mise en page */
+  display: inline-block;
 }

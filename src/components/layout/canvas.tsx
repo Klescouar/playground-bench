@@ -1,23 +1,24 @@
-import React, { useContext, useRef, useState } from 'react';
-import { Content } from './content';
-import ArrowDownIcon from '../../../public/arrow-down-long.svg';
-import ArrowUpIcon from '../../../public/arrow-up-long.svg';
-import classNames from 'classnames';
-import { LanguageSwitcher } from '../LanguageSwitcher/LanguageSwitcher';
-import { useT } from 'talkr';
-import { useIsMobile } from '@/hooks/useIsMobile';
-import { ScrollContext } from '@/pages/_app';
+import React, { useContext, useRef, useState } from "react";
+import { Content } from "./content";
+import ArrowDownIcon from "../../../public/arrow-down-long.svg";
+import ArrowUpIcon from "../../../public/arrow-up-long.svg";
+import classNames from "classnames";
+import { LanguageSwitcher } from "../LanguageSwitcher/LanguageSwitcher";
+import { useT } from "talkr";
+import useDeviceType from "@/hooks/useDeviceType";
+import { ScrollContext } from "@/pages/_app";
 
 export enum CHAPTERS {
-  EXPERIENCES = 'experiences',
-  WHO_AM_I = 'who_am_i',
+  EXPERIENCES = "experiences",
+  WHO_AM_I = "who_am_i",
 }
 
 const CanvasWrapper = ({ children }: { children: React.ReactNode }) => {
   const [chapter, setChapter] = useState(CHAPTERS.WHO_AM_I);
   const wheelStartedRef = useRef(false);
   const { T } = useT();
-  const isMobile = useIsMobile();
+  const device = useDeviceType();
+  const isMobile = device === "mobile";
   const { scrollPosition } = useContext(ScrollContext);
   const handleChapterChange = () => {
     setChapter(
@@ -57,8 +58,8 @@ const CanvasWrapper = ({ children }: { children: React.ReactNode }) => {
       </div>
       <div className="Canvas__Nav">
         <button
-          className={classNames('Canvas__Nav__Arrow', {
-            '--hide': chapter === CHAPTERS.WHO_AM_I,
+          className={classNames("Canvas__Nav__Arrow", {
+            "--hide": chapter === CHAPTERS.WHO_AM_I,
           })}
           aria-label='Scroll to "Who am I"'
           onClick={handleChapterChange}
@@ -66,8 +67,8 @@ const CanvasWrapper = ({ children }: { children: React.ReactNode }) => {
           <ArrowUpIcon />
         </button>
         <div
-          className={classNames('Canvas__Nav__Chapters', {
-            '--switched': chapter === CHAPTERS.WHO_AM_I,
+          className={classNames("Canvas__Nav__Chapters", {
+            "--switched": chapter === CHAPTERS.WHO_AM_I,
           })}
         >
           <p className="Canvas__Nav__Chapters__Item">
@@ -77,8 +78,8 @@ const CanvasWrapper = ({ children }: { children: React.ReactNode }) => {
         </div>
 
         <button
-          className={classNames('Canvas__Nav__Arrow', {
-            '--hide': chapter === CHAPTERS.EXPERIENCES,
+          className={classNames("Canvas__Nav__Arrow", {
+            "--hide": chapter === CHAPTERS.EXPERIENCES,
           })}
           aria-label='Scroll to "Experiences"'
           onClick={handleChapterChange}

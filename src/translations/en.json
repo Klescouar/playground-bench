@@ -3,9 +3,18 @@
   "since": "since",
   "who_am_i": "Who am I?",
   "experiences": "Experiences",
-  "about/part1": "Full-Stack Developer with nearly 7 years of experience, I have a strong expertise in the JavaScript ecosystem, particularly with React.js, TypeScript, and Node.js. I have had the opportunity to work on medium to large-scale complex projects, sometimes as a technical lead.",
-  "about/part2": "Passionate about my profession, I have the ability to adapt easily to different technical and functional contexts. I enjoy challenges and I am able to provide solutions to problems that impede the progress of my clients' projects.",
-  "about/part3": "Working in a team is a source of fulfillment for me, as well as mentoring junior developers in their skills development. I am also curious and constantly keeping up with new technological innovations in order to develop new skills and expertise.",
+  "decathlonFrontend": {
+    "job": "Frontend Developer",
+    "company": "Decathlon",
+    "period": "Since March 2024",
+    "project": "Continuous maintenance and complete modernization of Decathlon Canada's e-commerce site.",
+    "activities": {
+      "1": "Development of new features for the website",
+      "2": "Implementation of the new visual identity",
+      "3": "Participation in establishing best practices (strict typing, linters, code checker, tests)"
+    },
+    "technicalEnvironment": "NextJS, TypeScript, ReactJS, Redux, GraphQL, React-Testing-Library, Pnpm, Tailwind, Redis"
+  },
   "skeepers": {
     "job": "Fullstack Developer",
     "compagny": "Skeepers",
@@ -64,8 +73,10 @@
     "technicalEnvironment": "Vanilla JS, AngularJS, SASS, NodeJS, Karma, Gulp"
   },
   "about": {
-    "part1": "Full-Stack Developer with nearly 7 years of experience, I have a strong expertise in the JavaScript ecosystem, particularly with React.js, TypeScript, and Node.js. I have had the opportunity to work on medium to large-scale complex projects, sometimes as a technical lead.",
-    "part2": "Passionate about my profession, I have the ability to adapt easily to different technical and functional contexts. I enjoy challenges and I am able to provide solutions to problems that impede the progress of my clients' projects.",
-    "part3": "Working in a team is a source of fulfillment for me, as well as mentoring junior developers in their skills development. I am also curious and constantly keeping up with new technological innovations in order to develop new skills and expertise."
+    "part1": "My name is Kevin Le Scouarnec, a Full Stack Developer specializing in the JavaScript ecosystem since 2016. 👨‍💻🌐",
+    "part2": "🚀 With a particular expertise in technologies such as ReactJS, NodeJS, NextJS, NestJS, and a preference for TypeScript, I strive to make a meaningful contribution to every project I work on. I also have a strong curiosity for Python, which I explore outside of my professional assignments.",
+    "part3": "💼 My professional journey has enabled me to master the development of robust user interfaces and the design of scalable backends. I stay informed and curious about emerging technologies to ensure efficient technical solutions.",
+    "part4": "🛠️ My passion for software engineering goes hand-in-hand with a commitment to best development practices, code quality, and effectively solving technical challenges.",
+    "part5": "🌱 Outside of my professional commitments, I enjoy learning from my peers daily, sharing knowledge, and collaborating with passionate minds."
   }
 }

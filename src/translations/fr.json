@@ -3,13 +3,22 @@
   "since": "depuis",
   "who_am_i": "Qui suis-je ?",
   "experiences": "Expériences",
-  "about/part1": "Développeur Full-Stack avec près de 7 années d'expérience, je possède une solide expertise de l'écosystème JavaScript, en particulier avec React.js, TypeScript et Node.js. J'ai eu l'opportunité de travailler sur des projets complexes de moyenne à grande envergure, et parfois en tant que référent technique.",
-  "about/part2": "Passionné par mon métier, j'ai la capacité de m'adapter facilement aux différents contextes techniques et fonctionnels. J'apprécie les défis et je suis en mesure de proposer des solutions aux problèmes qui bloquent la progression des projets de mes clients.",
-  "about/part3": "Travailler en équipe est une source d'épanouissement pour moi, tout comme accompagner les développeurs juniors dans leur montée en compétences. Je suis également curieux et constamment à l'affût des nouvelles innovations technologiques, afin de développer de nouvelles compétences et expertises.",
+  "decathlonFrontend": {
+    "job": "Développeur Frontend",
+    "compagny": "Decathlon",
+    "period": "Depuis Mars 2024",
+    "project": "Maintenance continue et modernisation complète du site e-commerce de Decathlon Canada.",
+    "activities": {
+      "1": "Développement des nouvelles fonctionnalités du site web",
+      "2": "Implémentation de la nouvelle identité visuelle",
+      "3": "Participation à l'instauration de bonnes pratiques (strict typing, linters, code checker, tests)"
+    },
+    "technicalEnvironment": "NextJS, Typescript, ReactJS, Redux, GraphQL React-Testing-Library, Pnpm, Tailwind, Redis"
+  },
   "skeepers": {
     "job": "Développeur Fullstack",
     "compagny": "Skeepers",
-    "period": "Depuis juillet 2022",
+    "period": "Juillet 2022 - Mars 2024",
     "project": "Développement d'une interface de shopping en direct pour offrir aux clients une expérience en direct et interactive leur permettant d'interagir en temps réel avec les vendeurs ou les influenceurs, poser des questions sur les produits, obtenir des recommandations personnalisées et effectuer des achats instantanés pendant la diffusion en direct.",
     "activities": {
       "1": "Développement de nouvelles fonctionnalités (front-end/backend)",
@@ -65,8 +74,10 @@
     "technicalEnvironment": "Vanilla JS, AngularJS, SASS, NodeJS, Karma, Gulp"
   },
   "about": {
-    "part1": "Développeur Full-Stack avec près de 7 années d'expérience, je possède une solide expertise de l'écosystème JavaScript, en particulier avec React.js, TypeScript et Node.js. J'ai eu l'opportunité de travailler sur des projets complexes de moyenne à grande envergure, et parfois en tant que référent technique.",
-    "part2": "Passionné par mon métier, j'ai la capacité de m'adapter facilement aux différents contextes techniques et fonctionnels. J'apprécie les défis et je suis en mesure de proposer des solutions aux problèmes qui bloquent la progression des projets de mes clients.",
-    "part3": "Travailler en équipe est une source d'épanouissement pour moi, tout comme accompagner les développeurs juniors dans leur montée en compétences. Je suis également curieux et constamment à l'affût des nouvelles innovations technologiques, afin de développer de nouvelles compétences et expertises."
+    "part1": "Je m'appelle Kevin Le Scouarnec, développeur Full Stack spécialisé dans l'écosystème JavaScript depuis 2016. 👨‍💻🌐",
+    "part2": "🚀 Avec une expertise particulière dans les technologies telles que ReactJS, NodeJS, NextJS, NestJS et une préférence pour TypeScript, je m'efforce d'apporter une contribution significative à chaque projet sur lequel je travaille. Je nourris également une grande curiosité pour Python, que j’explore en dehors de mes missions.",
+    "part3": "💼 Mon parcours professionnel m'a permis de maîtriser le développement d'interfaces utilisateur robustes et la conception de backends évolutifs. Je veille et reste curieux des technologies émergentes pour garantir des solutions techniques efficaces.",
+    "part4": "🛠️ Ma passion pour l'ingénierie logicielle va de pair avec un engagement envers les meilleures pratiques de développement, la qualité du code et la résolution efficace des défis techniques.",
+    "part5": "🌱 En dehors de mon engagement professionnel, j'aime apprendre au quotidien de mes pairs, partager mes connaissances et collaborer avec des esprits passionnés."
   }
 }
