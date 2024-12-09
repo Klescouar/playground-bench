@@ -1,4 +1,4 @@
-@import './mixin.scss';
+@import "./mixin.scss";
 
 .About {
   height: 100%;
@@ -11,21 +11,21 @@
     position: relative;
     z-index: 10;
     color: rgb(205, 205, 205);
-    padding: 3rem;
     overflow-y: scroll;
     -ms-overflow-style: none;
     scrollbar-width: none;
-    flex: 0.7;
+    width: 100%;
+    padding: 2rem 2rem 10rem 2rem;
+    flex: 1;
 
-    @include mobile {
-      width: 100%;
-      padding: 0 0 10rem 0;
-      flex: 1;
+    @include large-desktop {
+      padding: 5rem 3rem;
+      flex: 0.7;
     }
 
     &__Title {
-      font-size: 3rem;
-      margin-bottom: 2rem;
+      font-size: 4rem;
+      margin-bottom: 4rem;
       text-align: center;
       margin-top: 0;
       opacity: 0;
@@ -34,10 +34,11 @@
 
     &__Paragraph {
       font-size: 1.6rem;
-      margin-bottom: 1.6rem;
+      margin: 3rem 0;
       line-height: 2rem;
       opacity: 0;
       animation: fadeIn 0.4s ease-in-out forwards;
+      letter-spacing: 0.1rem;
     }
   }
 
@@ -46,11 +47,11 @@
     height: 100%;
     animation: appearance 0.4s ease-in-out forwards;
     opacity: 0;
-    display: flex;
     align-items: end;
+    display: none;
 
-    @include mobile {
-      display: none;
+    @include large-desktop {
+      display: flex;
     }
 
     &__Image {

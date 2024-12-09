@@ -1,5 +1,5 @@
-import React from 'react';
-import Image from 'next/image';
+import React from "react";
+import Image from "next/image";
 
 const Contacts: React.FC = () => {
   return (
@@ -23,7 +23,7 @@ const Contacts: React.FC = () => {
         </a>
       </div>
       <p className="Contacts__Item">+1 (438) 927 0412</p>
-      <p className="Contacts__Item">lescouarneckevin@protonmail.com</p>
+      <p className="Contacts__Item Ellipsis">lescouarneckevin@protonmail.com</p>
     </div>
   );
 };

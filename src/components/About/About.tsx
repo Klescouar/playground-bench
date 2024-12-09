@@ -1,17 +1,22 @@
-import React, { useEffect, useState } from 'react';
-import Image from 'next/image';
-import { useT } from 'talkr';
-import classNames from 'classnames';
-import Contacts from '../Contacts/Contacts';
-import { useIsMobile } from '@/hooks/useIsMobile';
+import React, { useEffect, useState } from "react";
+import Image from "next/image";
+import { useT } from "talkr";
+import Contacts from "../Contacts/Contacts";
+import useDeviceType from "@/hooks/useDeviceType";
 
-const paragraphsData = ['about.part1', 'about.part2', 'about.part3'];
+const paragraphsData = [
+  "about.part1",
+  "about.part2",
+  "about.part3",
+  "about.part4",
+  "about.part5",
+];
 
 export const About: React.FC = () => {
   const [paragraphs, setParagraphs] = useState<string[]>([]);
-  const [isAnimated, setIsAnimated] = useState(false);
   const { T } = useT();
-  const isMobile = useIsMobile();
+  const device = useDeviceType();
+  const isMobile = device === "mobile";
 
   useEffect(() => {
     if (paragraphs.length === paragraphsData.length) return;
@@ -34,7 +39,7 @@ export const About: React.FC = () => {
   return (
     <div className="About">
       <div className="About__Description">
-        <h2 className="About__Description__Title">Hey,</h2>
+        <h2 className="About__Description__Title">Hey 👋,</h2>
         {paragraphs.map((paragraph, index) => (
           <p key={index} className="About__Description__Paragraph">
             {T(paragraph)}
@@ -49,7 +54,7 @@ export const About: React.FC = () => {
           src="/about.png"
           alt="Picture of Le Scouarnec Kevin"
           fill
-          style={{ objectFit: 'contain' }}
+          style={{ objectFit: "contain" }}
         />
       </div>
     </div>
